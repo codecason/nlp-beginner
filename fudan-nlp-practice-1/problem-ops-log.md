@@ -4,7 +4,4 @@
     回归预测问题  
         文本分类  
 
-bert的实现  
-
-transformer的实现  
-
+https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews/data
