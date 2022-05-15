@@ -24,4 +24,3 @@ ULMFiT was the first Transfer Learning method applied to NLP
 微调?
     Fine-Tuning  
     所处的位置?  模型训练前还是后?  
-
