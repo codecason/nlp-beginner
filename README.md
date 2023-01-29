@@ -19,7 +19,7 @@
 实现基于logistic/softmax regression的文本分类
 
 1. 参考
-   1. [文本分类](文本分类.md)
+   1. [文本分类](./task1-classify/文本分类.md)
    2. 《[神经网络与深度学习](https://nndl.github.io/)》 第2/3章
 2. 数据集：[Classify the sentiment of sentences from the Rotten Tomatoes dataset](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews)
 3. 实现要求：NumPy
