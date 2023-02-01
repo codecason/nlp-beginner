@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 """
 Sample code for
 Convolutional Neural Networks for Sentence Classification
@@ -13,9 +14,10 @@ import numpy
 import theano.tensor.shared_randomstreams
 import theano
 import theano.tensor as T
-from theano.tensor.signal import downsample
+from theano.tensor.signal import pool as downsample
 from theano.tensor.nnet import conv
 
+theano.config.floatX= 'float32'
 
 def ReLU(x):
     y = T.maximum(0.0, x)
@@ -414,21 +416,24 @@ class LeNetConvPoolLayer(object):
         self.b = theano.shared(value=b_values, borrow=True, name="b_conv")
 
         # convolve input feature maps with filters
+        print("input:", type(input))
+        print("self.W is", type(self.W))
+
         conv_out = conv.conv2d(input=input, filters=self.W,
                                filter_shape=self.filter_shape, image_shape=self.image_shape)
         if self.non_linear == "tanh":
             conv_out_tanh = T.tanh(
                 conv_out + self.b.dimshuffle('x', 0, 'x', 'x'))
-            self.output = downsample.max_pool_2d(
-                input=conv_out_tanh, ds=self.poolsize, ignore_border=True)
+            self.output = downsample.pool_2d(
+                input=conv_out_tanh, ws=self.poolsize, ignore_border=True)
         elif self.non_linear == "relu":
             conv_out_tanh = ReLU(
                 conv_out + self.b.dimshuffle('x', 0, 'x', 'x'))
-            self.output = downsample.max_pool_2d(
-                input=conv_out_tanh, ds=self.poolsize, ignore_border=True)
+            self.output = downsample.pool_2d(
+                input=conv_out_tanh, ws=self.poolsize, ignore_border=True)
         else:
-            pooled_out = downsample.max_pool_2d(
-                input=conv_out, ds=self.poolsize, ignore_border=True)
+            pooled_out = downsample.pool_2d(
+                input=conv_out, ws=self.poolsize, ignore_border=True)
             self.output = pooled_out + self.b.dimshuffle('x', 0, 'x', 'x')
         self.params = [self.W, self.b]
 
@@ -442,15 +447,15 @@ class LeNetConvPoolLayer(object):
         if self.non_linear == "tanh":
             conv_out_tanh = T.tanh(
                 conv_out + self.b.dimshuffle('x', 0, 'x', 'x'))
-            output = downsample.max_pool_2d(
-                input=conv_out_tanh, ds=self.poolsize, ignore_border=True)
+            output = downsample.pool_2d(
+                input=conv_out_tanh, ws=self.poolsize, ignore_border=True)
         if self.non_linear == "relu":
             conv_out_tanh = ReLU(
                 conv_out + self.b.dimshuffle('x', 0, 'x', 'x'))
-            output = downsample.max_pool_2d(
-                input=conv_out_tanh, ds=self.poolsize, ignore_border=True)
+            output = downsample.pool_2d(
+                input=conv_out_tanh, ws=self.poolsize, ignore_border=True)
         else:
-            pooled_out = downsample.max_pool_2d(
-                input=conv_out, ds=self.poolsize, ignore_border=True)
+            pooled_out = downsample.pool_2d(
+                input=conv_out, ws=self.poolsize, ignore_border=True)
             output = pooled_out + self.b.dimshuffle('x', 0, 'x', 'x')
         return output
