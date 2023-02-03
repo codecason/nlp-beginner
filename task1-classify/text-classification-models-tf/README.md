@@ -90,4 +90,8 @@ TODO
 ## References
 - [dennybritz/cnn-text-classification-tf](https://github.com/dennybritz/cnn-text-classification-tf)
 - [zonetrooper32/VDCNN](https://github.com/zonetrooper32/VDCNN)
-pip install scikit-learn wget nltk
+
+
+
+## 解决g++ not detected的问题
+conda install m2w64-toolchain

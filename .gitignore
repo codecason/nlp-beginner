@@ -4,3 +4,6 @@ data
 .vscode
 */__pycache__/*
 *pyc
+task1-classify/text-classification-models-tf/char_cnn
+task1-classify/text-classification-models-tf/dbpedia_csv
+task1-classify/text-classification-models-tf/*tar.gz
