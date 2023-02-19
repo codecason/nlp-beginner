@@ -8,3 +8,4 @@ task1-classify/text-classification-models-tf/char_cnn
 task1-classify/text-classification-models-tf/dbpedia_csv
 task1-classify/text-classification-models-tf/*tar.gz
 task1-classify/CNN_sentence/mr.p
+task2-match/InferSent/fastText
