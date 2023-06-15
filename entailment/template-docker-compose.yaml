@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  jupyter:
+    image: entailment_dockerfile
+    command: bash
+    container_name: jupyter
+    ports:
+      - 8888:8888
+      - 6006:6006
+    network_mode: "host"
+    restart: unless-stopped
+tty: true
