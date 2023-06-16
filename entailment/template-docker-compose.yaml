@@ -10,4 +10,6 @@ services:
       - 6006:6006
     network_mode: "host"
     restart: unless-stopped
+    volumes:
+      - /home/faiss/Labs/nlp-lab:/image_work
 tty: true
