@@ -1,6 +1,7 @@
 data
 .ipynb_checkpoints
 .idea
+.eggs/
 .vscode
 */__pycache__/*
 *pyc
