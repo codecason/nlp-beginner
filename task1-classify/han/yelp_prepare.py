@@ -87,6 +87,7 @@ def make_data(split_points=(0.8, 0.94)):
       y = review['stars']
 
       r = random.random()
+      # random push item to the file
       if r < train_ratio:
         f = train_f
       elif r < dev_ratio:

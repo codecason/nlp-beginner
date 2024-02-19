@@ -13,14 +13,15 @@ pip install -r requirements.txt
 
 2. Download the English model for spaCy:
 
-```
+```shell
 python -m spacy download en
+
 ```
 
 3. Get [Yelp review dataset](https://www.yelp.com/dataset_challenge) and extract it in this directory.
 ```
-python3 yelp_prepare.py dataset/review.json
-python3 worker.py --mode=train --device=/gpu:0 --batch-size=30
+python yelp_prepare.py dataset/review.json
+python worker.py --mode=train --device=/gpu:0 --batch-size=30
 ```
 
 ## Results

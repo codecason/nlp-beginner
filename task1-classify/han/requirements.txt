@@ -17,4 +17,5 @@ toolz
 tqdm
 ujson
 wrapt
-tensorflow
+tensorflow==1.13.2
+pandas
