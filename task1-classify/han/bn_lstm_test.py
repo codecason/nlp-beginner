@@ -76,6 +76,6 @@ for i in range(100000):
     current_time = time.time()
     if i % 100 == 0:
         batch_xs, batch_ys = mnist.validation.next_batch(batch_size)
-summary.    _str = sess.run(merged, feed_dict={x: batch_xs, y_: batch_ys, training: False})
-        writer.summary.add_str, i)
-    print(loss, step_time)
+        summary_str = sess.run(merged, feed_dict={x: batch_xs, y_: batch_ys, training: False})
+        writer.add_summary(summary_str, i)
+        print(loss, step_time)

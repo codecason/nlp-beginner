@@ -14,7 +14,7 @@ import numpy as np
 import time
 from yelp import *
 
-en = spacy.load('en')
+en = spacy.load('en_core_web_sm')
 
 def read_reviews():
   with open(args.review_path, 'rb') as f:
