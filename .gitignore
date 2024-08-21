@@ -11,3 +11,5 @@ task1-classify/text-classification-models-tf/*tar.gz
 task1-classify/CNN_sentence/mr.p
 task2-match/InferSent/fastText
 jupyter.conf
+*.code-workspace
+
